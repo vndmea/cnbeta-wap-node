@@ -1,18 +1,14 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 var request = require("request-promise");
 var cheerio = require("cheerio");
 
-// 当路径中传入数字用于分页
-function handler(req, res) {
-  var page = req.params.page;
+// 全站入口，不带分页参数
+router.get("/", function (req, res) {
+  var page = req.query.page;
   if (page) {
-    if (isNaN(parseInt(page))) {
-      return res.json({ message: "error", data: null, success: false });
-    }
-
     // 第1页和第0页同时获取
-    page = parseInt(page) > 1 ? parseInt(page) : 0; 
+    page = parseInt(page) > 1 ? parseInt(page) : 0;
   }
 
   request("https://m.cnbeta.com/wap" + (page ? "/index.htm?page=" + page : ""))
@@ -31,12 +27,11 @@ function handler(req, res) {
     .catch(function () {
       return res.json({ message: "error", data: null, success: false });
     });
-}
-
-// 全站入口，不带分页参数
-router.get("/", handler);
+});
 
 // 分页参数
-router.get("/:page", handler);
+router.get("/:param", function handler(_, res) {
+  return res.json({ message: "error", data: null, success: false });
+});
 
 module.exports = router;
