@@ -31,7 +31,7 @@ router.get("/*", function (req, res, next) {
         `.adsbygoogle, .article-global, 
         .cnbeta-article-latest, .back, 
         .infinity, iframe, ins, noscript, 
-        script, .footer, .cbimage-fixed
+        script, .footer, .cbimage-fixed,
         #header, #commentHolder, #go_nav`
       ).remove();
       return res.send($.html());
