@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_epc_zkn_mxb">
-    <title></title>
+    <title>b</title>
     <body>
-        <p></p>
+        <p/>
     </body>
+    <topic id="id_ikl_1ln_mxb" conref="Topic.dita">
+        <title/>
+    </topic>
 </topic>
