@@ -5,4 +5,7 @@
     <body>
         <p>a1</p>
     </body>
+    <topic id="id_cdx_cln_mxb" conref="Topic-2.dita">
+        <title/>
+    </topic>
 </topic>
